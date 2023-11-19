@@ -1,0 +1,13 @@
+READ ME 
+Welcome to the lab4, we are implementing a distributed asychnronous distance vextor routing algorithm for a network. The key components are: 
+1. Distance Table: each node maintains a distance table that records the cost to each destination node via each directly connected neighbour 
+2. Routing Packet (rtpkt) Structure: Used to send minimum cost path info to neighboring nodes. COntains: Source node ID, Destiningation node IS and an array of minimum cost to each node in network. 
+3. Initialization Routine (rtinit): initializes the distance table for a node using direct link costs and then informs neighours of its minim cost paths by sending a routing packet.
+4. Update Routine (rtupdate): processes incoing routing packets, updates distance table based on the recieved info. recalculates the bodes miimum cost paths, and sends out routing pacets to neighbors if the minimun costs have changed. 
+5. Pretty-print Routine (printdt): prints the distance table in a formatted manner.
+6. Layer 2 Transmission (tolayer2): call to send routing packets to other nodes. 
+
+We will have 4 nodes (0,1,2,3) we will use python :)
+
+DEMO NOTES: 
+
