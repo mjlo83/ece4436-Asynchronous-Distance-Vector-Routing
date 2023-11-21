@@ -15,6 +15,9 @@ from node1 import rtinit1, rtupdate1, linkhandler1
 from node2 import rtinit2, rtupdate2
 from node3 import rtinit3, rtupdate3
 
+LINKCHANGES = 1
+
+
 
 # ***************** NETWORK EMULATION CODE STARTS BELOW ***********
 # The code below emulates the layer 2 and below network environment:

@@ -45,3 +45,30 @@ def rtupdate1(pkt):
 def linkhandler1(linkid, newcost):
     # Optional: Implement if handling dynamic link cost changes is required
     pass
+
+# for part 2 to handle changes in the link cost between node 0 and node 
+# For node1.py
+def rtlinkhandler1(linkid, newcost):
+    global distance_table
+    updated = False
+    old_cost = distance_table[linkid][1]
+    distance_table[linkid][1] = newcost
+
+    # Check if this new link cost affects the minimum cost path to other nodes
+    for i in range(4):
+        if i != 1:  # Skip the distance to self
+            via_link_cost = distance_table[i][linkid] + newcost
+            if via_link_cost < distance_table[i][1]:
+                distance_table[i][1] = via_link_cost
+                updated = True
+            elif old_cost + distance_table[i][linkid] == distance_table[i][1]:  # If the old route was the shortest
+                distance_table[i][1] = min([distance_table[i][j] for j in range(4)])  # Recalculate the shortest path
+                updated = True
+
+    if updated:
+        print("TRIGGERED 1")
+        print(f"Node 1 link cost updated. New distance table: {distance_table}")
+        send_to_neighbors()
+
+
+

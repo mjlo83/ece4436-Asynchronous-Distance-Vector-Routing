@@ -9,5 +9,6 @@ Welcome to the lab4, we are implementing a distributed asychnronous distance vex
 
 We will have 4 nodes (0,1,2,3) we will use python :)
 
-DEMO NOTES: 
 
+DEMO NOTES: 
+We run by playing the main distanceVector.py. 
