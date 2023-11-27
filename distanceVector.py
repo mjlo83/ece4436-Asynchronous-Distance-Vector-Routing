@@ -19,6 +19,7 @@ LINKCHANGES = 1
 
 
 
+
 # ***************** NETWORK EMULATION CODE STARTS BELOW ***********
 # The code below emulates the layer 2 and below network environment:
 #   - emulates the tranmission and delivery (with no loss and no
@@ -62,9 +63,11 @@ def main():
                 exit(0)
         elif event.evtype == LINK_CHANGE:
             if (clocktime<10001.0):
+                
                 linkhandler0(1,20)
                 linkhandler1(0,20)
             else:
+                
                 linkhandler0(1,1)
                 linkhandler1(0,1)
         else:
